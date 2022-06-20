@@ -1,0 +1,69 @@
+{% extends 'base/base_publico.html' %}
+{% load static %}
+{% block conteudo %}
+<div class="row">
+	<table class="table table-bordered table-striped bg-light">
+		<thead>
+			<th class="text-center" style="width: 5%">
+				<small>ID</small>
+			</th>
+			<th class="text-center">
+				<small>Imagem</small>
+			</th>
+			<th class="text-center">
+				<small>Produto</small>
+			</th>
+			<th class="text-center" style="width: 10%">
+				<small>Quantidade</small>
+			</th>
+			<th class="text-center">
+				<small>Preço unidade</small>
+			</th>
+			<th class="text-center">
+				<small>Preço total</small>
+			</th>
+			<th class="text-center" style="width: 5%"></th>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="text-center align-middle">
+					<small>1000</small>
+				</th>
+				<td class="d-flex justify-content-center">
+					<img src="https://static9.depositphotos.com/1594920/1089/i/950/depositphotos_10895961-stock-photo-pug-2-and-a-half.jpg"
+						alt="" height="60px" width="60px">
+				</td>
+				<td class="text-center align-middle">
+					<small> Pug escoces</small>
+				</td>
+				<td class="align-middle">
+					<input id="txtQuantidade" type="" class="form-control form-control-sm text-center" value="1">
+				</td>
+				<td class="text-center align-middle">
+					<small>R$ 100,00</small>
+				</td>
+				<td class="text-center align-middle">
+					<small>R$ 500,00</small>
+				</td>
+				<td class="text-center  align-middle">
+					<button class="btn btn-sm btn-danger border">Remover</button>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<th class="text-center  align-middle">Total</th>
+			<th></th>
+			<th></th>
+			<th class="text-center  align-middle">5</th>
+			<th></th>
+			<th class="text-center  align-middle">R$ 900,00</th>
+			<th></th>
+		</tfoot>
+	</table>
+</div>
+<div class="row justify-content-end mt-2">
+	<div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 justify-content-end d-flex">
+		<button type="submit" class="btn btn-success">Finalizar compra</button>
+	</div>
+</div>
+{% endblock conteudo %}

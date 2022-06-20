@@ -1,0 +1,6 @@
+python manage.py loaddata dados_iniciais_pais_estado_cidade.json
+python manage.py loaddata dados_iniciais_unidade_medida.json
+python manage.py loaddata dados_iniciais_categoria_produto.json
+python manage.py loaddata dados_iniciais_produto.json
+python manage.py loaddata dados_iniciais_usuario.json
+python manage.py loaddata dados_iniciais_produto_imagem.json

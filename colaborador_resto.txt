@@ -1,0 +1,39 @@
+# PESSOAL
+    nome = models.CharField('Nome', max_length=255)
+    cpf_cnpj = models.CharField('CPF/CNPJ', max_length=18, null=True, blank=True)
+    data_nascimento = models.DateField('Data de Nascimento', default=date.today, null=True, blank=True)
+    # CONTATO
+    telefone = models.CharField('Telefone', max_length=20, null=True, blank=True)
+    email = models.EmailField('E-Mail', unique=True)
+
+	class Meta:
+		verbose_name = 'Colaborador'
+		verbose_name_plural = 'Colaboradores'
+		db_table = 'colaborador'
+
+class ColaboradorEndereco(Endereco):
+	colaborador = models.ForeignKey(Colaborador, on_delete=models.CASCADE)
+	padrao = models.BooleanField(default=False)
+
+	class Meta:
+		verbose_name = 'Endereço do colaborador'
+		verbose_name_plural = 'Endereços dos colaboradores'
+		db_table = 'colaborador_endereco'
+
+	def __str__(self):
+		informacao = 'Colaborador: ' + str(
+			self.colaborador) + ' - Endereço: ' + self.rua + ', nº ' + self.numero + ', ' + self.bairro + ', CEP ' + self.cep
+		if self.complemento:
+			informacao = informacao + ', ' + self.complemento
+		if self.referencia:
+			informacao = informacao + ', ' + self.referencia
+		return informacao
+
+	def save(self):
+		#  SÓ UM ENDEREÇO COMO PADRÃO
+		if self.padrao:
+			colaboradores_enderecos = ColaboradorEndereco.objects.filter(padrao=True, produto=self.endereco.pk)
+			for colaboradore_endereco in colaboradores_enderecos:
+				colaboradore_endereco.padrao = False
+				colaboradore_endereco.save()
+		super().save()

@@ -1,0 +1,24 @@
+[
+	{
+		"model": "usuario.Usuario",
+		"pk": 2,
+		"fields": {
+			"username": "perpectus",
+			"password": "pbkdf2_sha256$320000$oq7GLKZgpKwNdgTjXoyrJz$vP1o+Ggj67agbxz4MLkxfGGlFn5Ka+f2chT0PKrAT8A=",
+			"tipo": "F",
+			"nome_fantasia": "Sergio Sacchetti Junior",
+			"razao_social": "Sergio Sacchetti Junior",
+			"sexo": "M",
+			"telefone": "6999303993",
+			"email": "sacchettif13@gmail.com",
+			"cpf_cnpj": "01108574297",
+			"data_nascimento": "1996-11-11",
+			"is_superuser": true,
+			"is_staff": true,
+			"is_active": true,
+			"is_trusty": true,
+			"is_anonymous": false,
+			"data_cadastro": "2022-04-03 15:42:57.979921"
+		}
+	}
+]
